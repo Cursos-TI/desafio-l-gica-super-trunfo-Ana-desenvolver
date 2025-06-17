@@ -93,7 +93,7 @@ int main() {
 
     // Menu de escolha do usuário
     int opcao; // Declaração da variável para armazenar a escolha do jogador
-    
+
     printf("\nEscolha o atributo para comparar:\n");
     printf("1 - População\n");
     printf("2 - Área\n");
@@ -101,21 +101,25 @@ int main() {
     printf("4 - Pontos Turísticos\n");
     printf("5 - Densidade Populacional\n");
     printf("Digite sua opção: ");
+
+// Lê a opção escolhida pelo jogador
     scanf("%d", &opcao);
 
+// Exibe quais cidades estão sendo compardas
     printf("\nComparando %s e %s...\n", nomeCidade, nomeCidade2);
 
+// Estrutura switch, realiza a ação de acordo com a opção escolhida
     switch (opcao) {
-        case 1: // População
+        
+        case 1: // Caso o jogador escolha comparar População
             printf("Atributo: População\n");
             printf("%s: %d | %s: %d\n", nomeCidade, populacao, nomeCidade2, populacao2);
+            // Compara os valores usando o if-else
             if (populacao > populacao2) {
-                printf("Vencedor: %s\n", nomeCidade);
+                printf("Vencedor: %s\n", nomeCidade); // Vence quem tiver a maior população
             } else if (populacao < populacao2) {
                 printf("Vencedor: %s\n", nomeCidade2);
-            } else {
-                printf("Empate!\n");
-            }
+            } 
             break;
 
         case 2: // Área
@@ -125,8 +129,6 @@ int main() {
                 printf("Vencedor: %s\n", nomeCidade);
             } else if (area < area2) {
                 printf("Vencedor: %s\n", nomeCidade2);
-            } else {
-                printf("Empate!\n");
             }
             break;
 
@@ -137,8 +139,6 @@ int main() {
                 printf("Vencedor: %s\n", nomeCidade);
             } else if (pib < pib2) {
                 printf("Vencedor: %s\n", nomeCidade2);
-            } else {
-                printf("Empate!\n");
             }
             break;
 
@@ -149,24 +149,21 @@ int main() {
                 printf("Vencedor: %s\n", nomeCidade);
             } else if (pontosTuristicos < pontosTuristicos2) {
                 printf("Vencedor: %s\n", nomeCidade2);
-            } else {
-                printf("Empate!\n");
             }
             break;
 
-        case 5: // Densidade demográfica (regra invertida)
+        case 5: // Densidade populacional, regra invertida. Vence quem tiver a menor densidade
             printf("Atributo: Densidade Populacional (quanto menor, melhor)\n");
-            printf("%s: %.2f | %s: %.2f\n", nomeCidade, densidadepopulacional, nomeCidade2, densidadepopulacional2);
+            
             if (densidadepopulacional < densidadepopulacional2) {
                 printf("Vencedor: %s\n", nomeCidade);
             } else if (densidadepopulacional > densidadepopulacional2) {
                 printf("Vencedor: %s\n", nomeCidade2);
-            } else {
-                printf("Empate!\n");
             }
             break;
 
         default:
+        // Caso o jogador digite uma opção inválida
             printf("Opção inválida!\n");
             break;
     }
