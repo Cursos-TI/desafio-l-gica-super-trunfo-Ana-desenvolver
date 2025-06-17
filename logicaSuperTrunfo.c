@@ -2,7 +2,7 @@
 
 int main() {
     printf("Bem vindo ao Desafio Lógica Super Trunfo\n");
-    
+
     // Declaração das Variáveis da primeira carta
     char estado[50], nomeCidade[50], codigoCarta[10];
     int populacao, pontosTuristicos;
@@ -90,6 +90,19 @@ int main() {
     printf("PIB: %.2f\n", pib2);
     printf("Densidade populacional: %.2f habitantes por km²\n", densidadepopulacional2);
     printf("PIB per capita: %.2f\n", pibpercapita2);
+
+    // Menu de escolha do usuário
+    int opcao;
+    printf("\nEscolha o atributo para comparar:\n");
+    printf("1 - População\n");
+    printf("2 - Área\n");
+    printf("3 - PIB\n");
+    printf("4 - Pontos Turísticos\n");
+    printf("5 - Densidade Populacional\n");
+    printf("Digite sua opção: ");
+    scanf("%d", &opcao);
+
+    printf("\nComparando %s e %s...\n", nomeCidade, nomeCidade2);
 
     
     
